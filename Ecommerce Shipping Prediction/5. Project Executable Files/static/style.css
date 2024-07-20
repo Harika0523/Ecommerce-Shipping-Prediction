@@ -1,0 +1,48 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.hero {
+    background-image: url('https://images.unsplash.com/photo-1581044467885-7b7f727b148a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwyMjI2NTV8MHwxfGFsbHwxfHx8fHx8fHx8fDE2MzM5OTMzNjc&ixlib=rb-1.2.1&q=80&w=1080');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+}
+
+.container {
+    padding: 20px;
+}
+
+/* Home Page Specific Styles */
+body.home-page .hero {
+    background-image: url('https://images.unsplash.com/photo-1565575536-c80b97c45252?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwyMjI2NTV8MHwxfGFsbHwxfHx8fHx8fHx8fDE2MzM5OTMzNzA&ixlib=rb-1.2.1&q=80&w=1080');
+}
+
+/* About Page Specific Styles */
+body.about-page .hero {
+    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vecteezy.com%2Ffree-vector%2Fe-commerce-background&psig=AOvVaw33DXmaq9_aypf07PoiAKUf&ust=1721506618520000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCID2nYr2s4cDFQAAAAAdAAAAABAE');
+}
+
+/* Services Page Specific Styles */
+body.services-page .hero {
+    background-image: url('https://images.unsplash.com/photo-1526404481265-008ed0f018a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwyMjI2NTV8MHwxfGFsbHwxfHx8fHx8fHx8fDE2MzM5OTMzNzE&ixlib=rb-1.2.1&q=80&w=1080');
+}
+
+/* Contact Page Specific Styles */
+body.contact-page .hero {
+    background-image: url('https://images.unsplash.com/photo-1575504476437-6e8d5877d8f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwyMjI2NTV8MHwxfGFsbHwxfHx8fHx8fHx8fDE2MzM5OTMzNjE&ixlib=rb-1.2.1&q=80&w=1080');
+}

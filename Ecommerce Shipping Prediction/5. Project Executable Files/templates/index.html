@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Prediction</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <header class="text-center mb-4">
+            <img src="{{ url_for('static', filename='shipping.png') }}" alt="Shipping" class="img-fluid mb-3" style="max-width: 200px;">
+            <h1>Shipping Prediction</h1>
+            <p class="lead">Get an estimate of your product's timely delivery</p>
+        </header>
+
+        <form action="/predict" method="POST">
+            <div class="form-group">
+                <label for="warehouse_block">Warehouse Block</label>
+                <input type="text" id="warehouse_block" name="warehouse_block" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mode_of_shipment">Mode of Shipment</label>
+                <input type="text" id="mode_of_shipment" name="mode_of_shipment" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="customer_care_calls">Customer Care Calls</label>
+                <input type="number" id="customer_care_calls" name="customer_care_calls" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="customer_rating">Customer Rating</label>
+                <input type="number" id="customer_rating" name="customer_rating" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cost_of_product">Cost of Product</label>
+                <input type="number" id="cost_of_product" name="cost_of_product" class="form-control" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <label for="prior_purchases">Prior Purchases</label>
+                <input type="number" id="prior_purchases" name="prior_purchases" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="product_importance">Product Importance</label>
+                <input type="text" id="product_importance" name="product_importance" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <input type="text" id="gender" name="gender" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="discount_offered">Discount Offered</label>
+                <input type="number" id="discount_offered" name="discount_offered" class="form-control" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <label for="weight_in_gms">Weight in Grams</label>
+                <input type="number" id="weight_in_gms" name="weight_in_gms" class="form-control" step="0.01" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Submit and Predict</button>
+        </form>
+
+        <div id="result" class="text-center mt-4">
+            <p>{{ p }}</p>
+        </div>
+
+        <!-- Bootstrap JS and dependencies -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <!-- Custom JavaScript -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Example of dynamic content update
+                const resultElement = document.getElementById('result');
+                if (resultElement.innerText.includes('chance')) {
+                    resultElement.classList.add('alert', 'alert-info');
+                }
+            });
+        </script>
+    </div>
+</body>
+</html>
